@@ -11,6 +11,13 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "allowJs": true,
+    "declaration": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["src/*"],
       "@shared/*": ["src/app/shared/*"],

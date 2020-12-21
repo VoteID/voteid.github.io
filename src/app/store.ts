@@ -5,7 +5,7 @@ import { DefaultState, IState } from './state';
 import { VuexPersist } from '@vuesion/addon-vuex-persist';
 import { PersistCookieStorage } from '@vuesion/addon-vuex-persist/dist/PersistCookieStorage';
 import { AppModule } from './app/module';
-import { AuthModule } from '@shared/modules/auth/module';
+import { AuthModule, LobbyModule } from '@shared/modules/auth/module';
 
 Vue.use(Vuex);
 
@@ -54,3 +54,4 @@ export const registerModule = (moduleName: string, module: Module<any, any>) => 
 
 registerModule('app', AppModule);
 registerModule('auth', AuthModule);
+registerModule('lobby', LobbyModule);

@@ -1,7 +1,9 @@
 <template>
   <div :class="$style.error">
-    <vue-headline level="1">Error</vue-headline>
-    <vue-headline level="3">Try again later!</vue-headline>
+    <div :class="$style.subTitle">
+      <vue-headline level="1">Error</vue-headline>
+      <vue-headline level="3">Try again later!</vue-headline>
+    </div>
   </div>
 </template>
 
@@ -39,5 +41,20 @@ export default {
   height: 300px;
   margin: auto;
   margin-top: 25%;
+  z-index: 1;
+}
+
+.subTitle {
+  background: #fce02b;
+  width: 100%;
+  font-size: medium;
+  font-weight: 500;
+  color: #000;
+  padding: 0.3em;
+
+  @include mediaMin(tabletPortrait) {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
 }
 </style>

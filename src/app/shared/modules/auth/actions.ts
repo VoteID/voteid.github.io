@@ -3,7 +3,7 @@
  */
 
 import { ActionContext } from 'vuex';
-import { IAuthState } from './state';
+import { IAuthState, ILobbyState } from './state';
 import { IState } from '@/app/state';
 import { HttpService } from '@shared/services/HttpService/HttpService';
 
@@ -17,12 +17,22 @@ export interface IAuthRequest {
   password: string;
 }
 
+export interface ILobbyResponse {
+  multiAddr: string;
+}
+
+export interface ILobbyRequest {}
+
 export interface IAuthActions {
   createToken(context: ActionContext<IAuthState, IState>, data: IAuthRequest): Promise<any>;
 
   refreshToken(context: ActionContext<IAuthState, IState>): Promise<any>;
 
   revokeToken(context: ActionContext<IAuthState, IState>): Promise<any>;
+}
+
+export interface ILobbyActions {
+  createLobby(context: ActionContext<ILobbyState, IState>, data: ILobbyRequest): Promise<any>;
 }
 
 const getFormData = (username: string, password: string) =>
@@ -48,6 +58,20 @@ export const AuthActions: IAuthActions = {
       throw new Error(e);
     }
   },
+  /*
+  async closeLobby({ commit }) {
+    try {
+      await HttpService.delete('/lobby');
+
+      //commit('SET_ACCESS_TOKEN', access_token);
+      //commit('SET_REFRESH_TOKEN', refresh_token);
+    } catch (e) {
+      //commit('SET_ACCESS_TOKEN', null);
+      //commit('SET_REFRESH_TOKEN', null);
+      throw new Error(e);
+    }
+  },
+  */
   async refreshToken({ commit, state: { refreshToken } }) {
     try {
       const {
@@ -76,6 +100,30 @@ export const AuthActions: IAuthActions = {
     } catch (e) {
       commit('SET_ACCESS_TOKEN', null);
       commit('SET_REFRESH_TOKEN', null);
+    }
+  },
+};
+
+export const LobbyActions: ILobbyActions = {
+  async createLobby({ commit }) {
+    try {
+      const {
+        data: { multiAddr },
+      } = await HttpService.post<ILobbyResponse>('/lobby', '', {
+        headers: {
+          Authorization: 'Basic Zm9vYmFy',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
+
+      console.info('Got multiAddr:');
+      console.info(multiAddr);
+      // commit('SET_LOBBY_ADDR', access_token);
+      commit('SET_LOBBY_ADDR', multiAddr);
+      // commit('SET_REFRESH_TOKEN', refresh_token);
+    } catch (e) {
+      commit('SET_LOBBY_ADDR', null);
+      throw new Error(e);
     }
   },
 };

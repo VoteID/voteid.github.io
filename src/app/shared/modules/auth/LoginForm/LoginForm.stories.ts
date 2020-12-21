@@ -11,9 +11,9 @@ story.add(
   withInfo({})(() => ({
     i18n,
     components: { LoginForm },
-    template: `<login-form @submit="onSubmit" />`,
+    template: `<login-form @request="onLoginRequest" />`,
     methods: {
-      onSubmit: action('@submit'),
+      onLoginRequest: action('@request'),
     },
   })),
 );

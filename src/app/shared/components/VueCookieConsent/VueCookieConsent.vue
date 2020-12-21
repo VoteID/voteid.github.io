@@ -77,8 +77,9 @@ export default {
   flex-direction: row;
   z-index: $nav-bar-index;
   background-color: $card-bg;
+  color: black;
   width: 100%;
-  bottom: 0;
+  top: 0;
   transition: opacity $brand-transition-duration ease-in-out;
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -93,12 +94,12 @@ export default {
   justify-content: center;
   align-items: center;
   flex: 0 0 $space-52;
-  background: $brand-secondary;
+  background: #e86d22; //$brand-secondary;
   cursor: pointer;
   color: foreground-color($brand-secondary);
 
   &:hover {
-    background-color: darken($brand-secondary, 5%);
+    background-color: #ff9552; //darken($brand-secondary, 5%);
   }
 }
 

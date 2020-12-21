@@ -16,7 +16,7 @@ applyMiddlewares(app);
  * can be removed if you don't need them in your application
  */
 DemoRoutes(app);
-CounterRoutes(app);
+// CounterRoutes(app);
 
 /**
  * core routes, don't delete these

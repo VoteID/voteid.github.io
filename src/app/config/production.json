@@ -1,5 +1,8 @@
 {
   "api": {
     "baseUrl": "https://vuesion.herokuapp.com"
+  },
+  "features": {
+    "disableParticles": true
   }
 }

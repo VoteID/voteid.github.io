@@ -40,7 +40,9 @@ export default {
 @import '~@/app/shared/design-system';
 
 .vueHeadline {
-  font-family: $font-family-headings;
+  font-family: revert;
+  font-weight: bolder;
+  //,$font-family-headings;
   margin: 0;
 }
 

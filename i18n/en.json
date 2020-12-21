@@ -1,8 +1,8 @@
 {
-  "App.core.description": "The most complete boilerplate for production-ready PWAs. With focus on performance, development speed, and best practices",
+  "App.core.description": "Peer-to-peer Anonymous Voting App of the future.",
   "auth.LoginForm.cta": "Login",
   "auth.LoginForm.password.error": "The password has to have at least 6 characters",
-  "auth.LoginForm.title": "Login Example",
+  "auth.LoginForm.title": "Login with VoteID",
   "auth.LoginForm.username.error": "The username can not be empty",
   "common.cancel": "Cancel",
   "common.ok": "Ok",

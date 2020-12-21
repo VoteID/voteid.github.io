@@ -1,9 +1,9 @@
 import { Module } from 'vuex';
 import { IState } from '@/app/state';
-import { AuthDefaultState, IAuthState } from './state';
-import { AuthActions } from './actions';
-import { AuthGetters } from './getters';
-import { AuthMutations } from './mutations';
+import { AuthDefaultState, LobbyDefaultState, IAuthState, ILobbyState } from './state';
+import { AuthActions, LobbyActions } from './actions';
+import { AuthGetters, LobbyGetters } from './getters';
+import { AuthMutations, LobbyMutations } from './mutations';
 
 export const AuthModule: Module<IAuthState, IState> = {
   namespaced: true,
@@ -18,5 +18,21 @@ export const AuthModule: Module<IAuthState, IState> = {
   },
   mutations: {
     ...AuthMutations,
+  },
+};
+
+export const LobbyModule: Module<ILobbyState, IState> = {
+  namespaced: true,
+  actions: {
+    ...LobbyActions,
+  },
+  getters: {
+    ...LobbyGetters,
+  },
+  state: {
+    ...LobbyDefaultState(),
+  },
+  mutations: {
+    ...LobbyMutations,
   },
 };

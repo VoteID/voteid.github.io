@@ -115,8 +115,10 @@ export default {
   z-index: $modal-index;
   box-shadow: $modal-shadow;
   padding: $modal-padding;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  background-color: #273b55;
+  border-radius: 1em;
 
   @include mediaMin(tabletPortrait) {
     max-width: $modal-max-width;

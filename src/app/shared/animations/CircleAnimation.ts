@@ -13,7 +13,7 @@ class Circle {
     private xPos: number,
     private yPos: number,
   ) {
-    this.direction = getIntInRange(0, 1) === 1 ? -1 : 1;
+    this.direction = getIntInRange(0.4, 0.6) === 1 ? 1 : -1;
   }
 
   public update(): void {
@@ -23,7 +23,7 @@ class Circle {
     this.opacity += opacityDirection * (getIntInRange(0, 999) / 50000);
 
     this.context.beginPath();
-
+    /*
     this.context.arc(
       this.xPos + Math.cos(this.counter / 100) * this.radius,
       this.yPos + Math.sin(this.counter / 100) * this.radius,
@@ -32,18 +32,28 @@ class Circle {
       Math.PI * 2,
       false,
     );
+    */
 
-    this.context.closePath();
-
-    this.context.fillStyle = 'rgba(244, 59, 108,' + this.opacity + ')';
-    this.context.fill();
+    const x = this.xPos + Math.cos(this.counter / 100) * this.radius;
+    const y = this.yPos + Math.sin(this.counter / 100) * this.radius;
+    this.context.moveTo(x + 200, y + 200);
+    const a = (Math.PI * 2) / 5;
 
     if (this.opacity <= 0) {
       this.counter = 0;
       this.opacity = getFloatInRange(0.05, 0.9);
-      this.width = getIntInRange(2, 10);
+      this.width = 0.1;
       this.speed = getFloatInRange(0.1, 1);
     }
+
+    for (let i = 1; i < 5; i++) {
+      this.context.lineTo(this.width * Math.cos(a * i), this.width * Math.sin(a * i));
+    }
+    this.context.fillStyle = 'rgba(141, 195, 249,' + this.opacity + ')';
+    this.context.closePath();
+
+    this.context.fill();
+    // this.context.stroke()
   }
 }
 

@@ -23,6 +23,7 @@
       <vue-icon-twitter-square />
       <vue-icon-vuesion />
       <vue-icon-star />
+      <vue-icon-play-store />
     </div>
   </div>
 </template>
@@ -49,6 +50,7 @@ import VueIconTimes from '@components/icons/VueIconTimes/VueIconTimes.vue';
 import VueIconTwitterSquare from '@components/icons/VueIconTwitterSquare/VueIconTwitterSquare.vue';
 import VueIconVuesion from '@components/icons/VueIconVuesion/VueIconVuesion.vue';
 import VueIconStar from '@components/icons/VueIconStar/VueIconStar.vue';
+import VueIconPlayStore from '@components/icons/VueIconPlayStore/VueIconPlayStore.vue';
 
 export default {
   name: 'IconList',
@@ -74,6 +76,7 @@ export default {
     VueIconBook,
     VueHeadline,
     VueIconStar,
+    VueIconPlayStore,
   },
 };
 </script>

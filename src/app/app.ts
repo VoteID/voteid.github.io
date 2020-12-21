@@ -12,8 +12,10 @@ import { i18n } from '@shared/plugins/i18n/i18n';
 import { HttpService } from '@shared/services/HttpService/HttpService';
 import './shared/directives';
 
-Vue.use(VeeValidate, { inject: false, delay: 1, events: 'input|blur' });
+import VueRellax from 'vue-rellax';
 
+Vue.use(VueRellax);
+Vue.use(VeeValidate, { inject: false, delay: 1, events: 'input|blur' });
 export interface IApp {
   app: Vue;
   router: VueRouter;

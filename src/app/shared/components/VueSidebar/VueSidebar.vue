@@ -73,6 +73,8 @@ export default {
   transition: transform $brand-transition-duration ease-in-out;
   width: $sidebar-width;
   -webkit-overflow-scrolling: touch;
+  display: flex-root;
+  flex-direction: column;
 
   &.open {
     transform: translateX(0);
@@ -80,10 +82,10 @@ export default {
 }
 
 .hamburger {
-  position: fixed;
-  top: $space-8 * 1.5;
-  left: $space-20;
-  height: $space-32;
+  position: relative;
+  //top: $space-8 * 1.5;
+  //left: $space-20;
+  //height: $space-32;
   z-index: $sidebar-index + 1;
   padding: 0;
   display: inline-block;

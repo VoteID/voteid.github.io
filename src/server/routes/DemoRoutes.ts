@@ -2,6 +2,8 @@ import * as Express from 'express';
 import { Request, Response } from 'express';
 import { serve } from '../utils/Utils';
 import { getIntInRange } from '@vuesion/utils/dist/randomGenerator';
+import rateLimit from 'express-rate-limit';
+import forever from 'forever-monitor';
 
 const getErrorWithProbability = (probability: number) => getIntInRange(0, 100) <= probability;
 
@@ -39,6 +41,68 @@ export const DemoRoutes = (app: Express.Application) => {
     }
   });
 
+  const apiLimiter = rateLimit({
+    windowMs: 5 * 60 * 1000, // 5 minutes
+    max: 100,
+  });
+
+  app.post('/lobby', apiLimiter, (req: Request, res: Response) => {
+    const maxTries = 3;
+
+    const lobbyService = new forever.Monitor('src/server/lobbyService.js', {
+      max: maxTries,
+      silent: true,
+      args: [],
+      minUptime: 300,
+    });
+
+    let multiAddr: string;
+
+    lobbyService.on('stdout', function(out) {
+      console.info('received stdout');
+      console.info(out.toString());
+      const info = out.toString();
+      if (info.indexOf('multiAddr:') != -1) {
+        console.info('appears to be multiAddr');
+        multiAddr = info.substring(info.indexOf('multiAddr:') + 10, 46 + 10);
+        res.status(200).json({ multiAddr });
+      }
+    });
+
+    lobbyService.on('restart', function() {
+      console.error('Forever restarting script for ' + lobbyService + ' time');
+    });
+
+    lobbyService.on('exit:code', function(code) {
+      console.error('Forever detected script exited with code ' + code);
+      if (multiAddr) {
+        lobbyService.stop();
+        // res.status(200).json({ multiAddr: multiAddr });
+      }
+      if (!multiAddr && lobbyService.times == maxTries) {
+        res.status(500).json({});
+      }
+    });
+
+    lobbyService.start();
+
+    /*
+    const lobbyServiceTimeout = setTimeout(() => {
+      lobbyService.kill();
+    }, 300);
+    
+    console.info(lobbyServiceTimeout);
+    */
+  });
+  /*
+  app.delete('/lobby', (req: Request, res: Response) => {
+    if (getErrorWithProbability(10)) {
+      res.status(500).json({});
+    } else {
+      res.status(200).json({});
+    }
+  });
+*/
   app.delete('/token', (req: Request, res: Response) => {
     if (getErrorWithProbability(10)) {
       res.status(500).json({});
