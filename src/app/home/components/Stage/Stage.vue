@@ -6,7 +6,7 @@
       speed: -4,
     }"
   >
-    <canvas :class="$style.canvas" ref="canvas"></canvas>
+    <!-- <canvas :class="$style.canvas" ref="canvas"></canvas> -->
 
     <vue-grid>
       <vue-grid-row>
@@ -63,6 +63,7 @@ export default {
   computed: {},
   methods: {
     handleResize() {
+      /*
       const canvas: HTMLCanvasElement = this.$refs.canvas;
       const stage: HTMLElement = this.$refs.stage;
       const stageRect: ClientRect =
@@ -75,6 +76,7 @@ export default {
 
       canvas.width = stageRect.width;
       canvas.height = stageRect.height;
+      */
     },
   },
   beforeMount() {
@@ -82,10 +84,11 @@ export default {
   },
   mounted() {
     this.handleResize();
-
+    /*
     if (!this.disableParticles) {
       CircleAnimation(this.$refs.canvas);
     }
+    */
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
