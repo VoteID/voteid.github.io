@@ -20,7 +20,7 @@
       <vue-icon-sort-up />
       <vue-icon-spinner />
       <vue-icon-times />
-      <vue-icon-twitter-square />
+      <vue-icon-reddit-square />
       <vue-icon-vuesion />
       <vue-icon-star />
       <vue-icon-play-store />
@@ -47,7 +47,7 @@ import VueIconSortDown from '@components/icons/VueIconSortDown/VueIconSortDown.v
 import VueIconSortUp from '@components/icons/VueIconSortUp/VueIconSortUp.vue';
 import VueIconSpinner from '@components/icons/VueIconSpinner/VueIconSpinner.vue';
 import VueIconTimes from '@components/icons/VueIconTimes/VueIconTimes.vue';
-import VueIconTwitterSquare from '@components/icons/VueIconTwitterSquare/VueIconTwitterSquare.vue';
+import VueIconRedditSquare from '@components/icons/VueIconRedditSquare/VueIconRedditSquare.vue';
 import VueIconVuesion from '@components/icons/VueIconVuesion/VueIconVuesion.vue';
 import VueIconStar from '@components/icons/VueIconStar/VueIconStar.vue';
 import VueIconPlayStore from '@components/icons/VueIconPlayStore/VueIconPlayStore.vue';
@@ -56,7 +56,7 @@ export default {
   name: 'IconList',
   components: {
     VueIconVuesion,
-    VueIconTwitterSquare,
+    VueIconRedditSquare,
     VueIconTimes,
     VueIconSpinner,
     VueIconSortUp,

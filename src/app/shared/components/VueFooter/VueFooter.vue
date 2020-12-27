@@ -10,8 +10,8 @@
           <a href="https://github.com/voteid" target="_blank" rel="noopener" aria-label="github profile">
             <vue-icon-github-alt />
           </a>
-          <a href="https://twitter.com/VoteID5" target="_blank" rel="noopener" aria-label="twitter profile">
-            <vue-icon-twitter-square />
+          <a href="https://www.reddit.com/r/voteid" target="_blank" rel="noopener" aria-label="reddit subgroup">
+            <vue-icon-reddit-square />
           </a>
           <a href="https://discord.gg/AafB3Vt7AM" target="_blank" rel="noopener" aria-label="discord group">
             <vue-icon-discord-square />
@@ -36,13 +36,13 @@ import VueGrid from '../VueGrid/VueGrid.vue';
 import VueGridItem from '../VueGridItem/VueGridItem.vue';
 import VueGridRow from '../VueGridRow/VueGridRow.vue';
 import VueIconGithubAlt from '../icons/VueIconGithubAlt/VueIconGithubAlt.vue';
-import VueIconTwitterSquare from '../icons/VueIconTwitterSquare/VueIconTwitterSquare.vue';
+import VueIconRedditSquare from '../icons/VueIconRedditSquare/VueIconRedditSquare.vue';
 import VueIconDiscordSquare from '../icons/VueIconDiscordSquare/VueIconDiscordSquare.vue';
 
 export default {
   name: 'VueFooter',
   components: {
-    VueIconTwitterSquare,
+    VueIconRedditSquare,
     VueIconDiscordSquare,
     VueIconGithubAlt,
     VueGrid,

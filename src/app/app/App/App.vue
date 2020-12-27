@@ -210,7 +210,7 @@ import VueIconCode from '@components/icons/VueIconCode/VueIconCode.vue';
 import VueIconBook from '@components/icons/VueIconBook/VueIconBook.vue';
 import VueIconHashtag from '@components/icons/VueIconHashtag/VueIconHashtag.vue';
 import VueIconGithub from '@components/icons/VueIconGithub/VueIconGithub.vue';
-import VueIconTwitterSquare from '@components/icons/VueIconTwitterSquare/VueIconTwitterSquare.vue';
+import VueIconRedditSquare from '@components/icons/VueIconRedditSquare/VueIconRedditSquare.vue';
 import VueSelect from '@components/VueSelect/VueSelect.vue';
 import VueIconPuzzlePiece from '@components/icons/VueIconPuzzlePiece/VueIconPuzzlePiece.vue';
 import VueButton from '@components/VueButton/VueButton.vue';
@@ -232,7 +232,7 @@ export default {
     VueButton,
     VueIconPuzzlePiece,
     VueSelect,
-    VueIconTwitterSquare,
+    VueIconRedditSquare,
     VueIconGithub,
     VueIconHashtag,
     VueIconBook,

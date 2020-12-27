@@ -4,7 +4,7 @@
     <div :class="$style.BulletPoints">
       <div :class="$style.foreground">
         <home-section id="voting" image="/vote_portrait.png" alternative>
-          <vue-headline level="2" :class="$style.warning">Voting</vue-headline>
+          <vue-headline level="2" :class="$style.warning">✓ Voting</vue-headline>
           <br />
           <vue-headline level="3" :class="$style.Underline">Truly Anonymous</vue-headline>
           <p>
@@ -27,7 +27,7 @@
           <vue-headline level="3">Offline voting</vue-headline>
           <p>
             We are working on enabling communication over Bluetooth or WiFi when internet connection is unstable or
-            unavailable. Some users experiences are best done completely offline.
+            unavailable. Some user experiences are best done completely offline.
           </p>
         </home-section>
 
