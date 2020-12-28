@@ -155,11 +155,10 @@
           <br />
           <ol>
             <li>
-              DID Wallet
+              First version release
             </li>
             <p>
-              With VoteID you can create digital identities that can be used to authenticate to 3rd party services and
-              as a means of accreditation.
+              Release the free version of the app on both App Store and Play Store. Consider alternative marketplaces.
             </p>
           </ol>
           <ol>
@@ -167,7 +166,7 @@
               Document Signing
             </li>
             <p>
-              Sign documents quickly and easily using our app and store them privately on a decentralized network.
+              Sign documents quickly and easily using your identity and store them privately on a decentralized network. Useful for signing contracts on the go.
             </p>
           </ol>
           <br />
