@@ -153,40 +153,31 @@
           <br />
           <vue-headline level="3">(Q1 2021)</vue-headline>
           <br />
-          <ol>
+          <ul>
             <li>
               First version release
             </li>
             <p>
               Release the free version of the app on both App Store and Play Store. Consider alternative marketplaces.
             </p>
-          </ol>
-          <ol>
+          </ul>
+          <br />
+          <br />
+          <vue-headline level="3">(Q3 2021)</vue-headline>
+          <br />
+          <ul>
             <li>
               Document Signing
             </li>
             <p>
               Sign documents quickly and easily using your identity and store them privately on a decentralized network. Useful for signing contracts on the go.
             </p>
-          </ol>
-          <br />
-          <br />
-          <vue-headline level="3">(Q3 2021)</vue-headline>
-          <br />
-          <ol>
-            <li>
-              Offline support
-            </li>
-            <p>
-              Allow devices to communicate offline using BLE or WiFi when internet connection is unstable or
-              unavailable. Some users experiences are best done completely offline.
-            </p>
-          </ol>
+          </ul>
           <br />
           <br />
           <vue-headline level="3">(Q2 2022)</vue-headline>
           <br />
-          <ol>
+          <ul>
             <li>
               Mass elections
             </li>
@@ -194,7 +185,7 @@
               We are working hard to bring our system to the masses and enable our users to hold large elections and
               surveys at scale.
             </p>
-          </ol>
+          </ul>
         </home-section>
       </div>
 
